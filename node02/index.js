@@ -13,5 +13,11 @@ meuEmissor.on(nomeEvento, function(click){
     console.log('um usuario clicou',click);
 });
 
-meuEmissor.emit(nomeEvento,'barra rolagem');
-meuEmissor.emit(nomeEvento,'click');
+// meuEmissor.emit(nomeEvento,'barra rolagem');
+// meuEmissor.emit(nomeEvento,'click');
+
+/** pega evento pelo terminal */
+const stdin = process.openStdin();
+stdin.addListener('data', function(value){
+    console.log(`Você digitou ${value.toString()}`);
+});
