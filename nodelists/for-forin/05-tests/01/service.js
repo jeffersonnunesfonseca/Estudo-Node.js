@@ -7,7 +7,6 @@ async function obterPessoas(nome) {
     console.log("chamando");
     const url = `${URL}/?search=${nome}&format=json`;
     const response = await axios.get(url);
-
     return response.data.results.map(mapearPessoas);
 }
 function mapearPessoas(item){
